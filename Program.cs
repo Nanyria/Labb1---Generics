@@ -14,16 +14,34 @@
             Display(boxList);
             Console.WriteLine("-----------------------------");
 
+            boxList.Remove(new Box(9, 9, 9));
 
+            Display(boxList);
+            Console.WriteLine("-----------------------------");
+
+            Box boxToCheck = new Box(5, 7, 18);
+            Console.WriteLine($"Checking to see if box with the following dimentions exists in collection:" +
+                $"\nHeight: {boxToCheck.Height}" +
+                $"\tWidth: {boxToCheck.Width}" +
+                $"\tLength: {boxToCheck.Length}" +
+                $"\tIs in collection: {boxList.Contains(boxToCheck)}");
+
+            Console.WriteLine("-----------------------------");
+            Box boxToCheckFalse = new Box(7, 7, 18);
+            Console.WriteLine($"Checking to see if box with the following dimentions exists in collection:" +
+                $"\nHeight: {boxToCheckFalse.Height}" +
+                $"\tWidth: {boxToCheckFalse.Width}" +
+                $"\tLength: {boxToCheckFalse.Length}" +
+                $"\tIs in collection: {boxList.Contains(boxToCheckFalse)}");
 
         }
-        
+
         public static void Display(BoxCollection boxes)
         {
-            Console.WriteLine("\nAvailable boxes:\nWidth\tLength:\tHeight:");
+            Console.WriteLine("\nAvailable boxes:\nHeight\tWidth:\tLength:");
             foreach (Box box in boxes)
             {
-                Console.WriteLine($"{box.Width}\t{box.Length}\t{box.Height}");
+                Console.WriteLine($"{box.Height}\t{box.Width}\t{box.Length}");
             }
         }
     }

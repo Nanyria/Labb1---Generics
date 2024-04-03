@@ -36,7 +36,10 @@ namespace Labb1____Generics
             }
             else
             {
-                Console.WriteLine("This type of box is already registered.");
+                Console.WriteLine($"\nTrying to add box with the dimentions:" +
+                    $"\nHeight:{item.Height}\nWidth:{item.Width}\nLength:{item.Length}" +
+                    $"\nThere is already a box with those dimentions in the collection." +
+                    $"\nBox not added.");
             }
 
             
@@ -91,9 +94,12 @@ namespace Labb1____Generics
                 Box currentBox = innerCollection[i];
                 if (new BoxSameDimentions().Equals(currentBox, item))
                 {
+                    Console.WriteLine($"\nRemoving box with the dimentions:" +
+                    $"\nHeight:{item.Height}\nWidth:{item.Width}\nLength:{item.Length}");
                     innerCollection.RemoveAt(i);
                     result = true;
 
+                    Console.WriteLine("Box removed.");
                     break;
                 }
 
