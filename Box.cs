@@ -31,5 +31,6 @@ namespace Labb1____Generics
                 return false; 
             }
         }
+
     }
 }
